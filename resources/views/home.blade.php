@@ -13,8 +13,7 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                        @endif 
-                        No Tasks :(
+                        @endif No Tasks :( 
                     </div>
                 </div>
             </div>
@@ -35,7 +34,7 @@
                                 <textarea placeholder="Description" class="form-control" name="description" id="description" rows="3"></textarea>
                             </div>
                             <div class="form-group">
-                                <button style="width:100%"type="submit" class="btn btn-primary">Add</button>
+                                <button style="width:100%" type="submit" class="btn btn-primary">Add</button>
                             </div>
                         </form>
                     </div>
