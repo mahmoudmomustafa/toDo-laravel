@@ -1,0 +1,11 @@
+/* home style */
+.content{
+  display: flex;
+  flex-direction: row;
+}
+.content .show-task{
+  flex-grow: 2;
+}
+.content .add-task{
+  flex-grow: 1; 
+}
