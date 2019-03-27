@@ -1,11 +1,27 @@
+*{
+  box-sizing: border-box;
+}
 /* home style */
 .content{
   display: flex;
   flex-direction: row;
 }
-.content .show-task{
-  flex-grow: 2;
-}
 .content .add-task{
-  flex-grow: 1; 
+  flex-grow: 4; 
+}
+.content .show-task{
+  flex-grow: 1;
+}
+
+/* ///asdasdasda */
+.list{
+  text-align: center;
+  background: #f7f7f7;
+  border: 1px solid rgba(128, 128, 128, 0.466);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+.list:hover{
+  background: rgb(168, 168, 168);
 }

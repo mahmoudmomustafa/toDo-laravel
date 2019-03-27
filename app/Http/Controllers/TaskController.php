@@ -5,22 +5,18 @@ namespace App\Http\Controllers;
 use App\Task;
 use Illuminate\Http\Request;
 
-class TasksController extends Controller
+class TaskController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
-    public function show(Task $task){
-
-        return view('/home',compact('task'));
-    }
     public function index()
     {
         auth();
-        $task = Tasks::where('user_id', auth()->id())->get();
+        $tasks = Task::where('user_id', auth()->id())->get();
 
-        return view('/home', compact('task'));
+        return view('tasks', compact("tasks"));
     }
 
     public function store()
@@ -31,6 +27,6 @@ class TasksController extends Controller
         ]);
         $attr['user_id'] = auth()->id();
         Task::create($attr);
-        return redirect('/home');
+        return redirect('/tasks');
     }
 }
