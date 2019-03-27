@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Tasks;
+use App\Task;
 use Illuminate\Http\Request;
 
 class TasksController extends Controller
@@ -11,16 +11,16 @@ class TasksController extends Controller
     {
         $this->middleware('auth');
     }
-    public function show(Tasks $tasks){
+    public function show(Task $task){
 
-        return view('/home',compact('tasks'));
+        return view('/home',compact('task'));
     }
     public function index()
     {
         auth();
-        $tasks = Tasks::where('user_id', auth()->id())->get();
+        $task = Tasks::where('user_id', auth()->id())->get();
 
-        return view('/home', compact('tasks'));
+        return view('/home', compact('task'));
     }
 
     public function store()
@@ -30,7 +30,7 @@ class TasksController extends Controller
             "description" => ['required', 'min:5']
         ]);
         $attr['user_id'] = auth()->id();
-        Tasks::create($attr);
+        Task::create($attr);
         return redirect('/home');
     }
 }
