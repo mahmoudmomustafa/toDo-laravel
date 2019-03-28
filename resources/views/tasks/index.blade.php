@@ -9,7 +9,7 @@
             <div class="card-header">Add New Task</div>
             <div class="card-body">
               {{-- form --}}
-              <form action="/tasks" method="post">
+            <form action="/tasks" method="post">
                 @csrf
                 <div class="form-group">
                   <input class="form-control" type="text" name="task_title" id="title" placeholder="Title">

@@ -16,9 +16,12 @@ class TaskController extends Controller
         auth();
         $tasks = Task::where('user_id', auth()->id())->get();
 
-        return view('tasks', compact("tasks"));
+        return view('tasks.index', compact("tasks"));
     }
-
+    public function show(Task $task){
+        // $this->authorize('view', $task);
+        return view('tasks.show', compact("task"));
+    }
     public function store()
     {
         $attr = request()->validate([
@@ -27,6 +30,15 @@ class TaskController extends Controller
         ]);
         $attr['user_id'] = auth()->id();
         Task::create($attr);
+        return redirect('/tasks');
+    }
+    public function edit(Task $task)
+    {
+        return view('tasks.edit', compact('task'));
+    }
+    public function update(Task $task){
+
+        $task->update(request(["task_title","description"]));
         return redirect('/tasks');
     }
 }
