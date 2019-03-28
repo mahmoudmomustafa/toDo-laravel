@@ -9,20 +9,15 @@
                     <div class="card-header">Your Tasks</div>
 
                     <div class="card-body">
-                        show tasks
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- add tasks --}}
-        <div class="row justify-content-center add-task">
-            <div class="col-md-10">
-                <div class="card">
-                    <div class="card-header">Add New Task</div>
-                    <div class="card-body">
-                        <button type="submit" class="btn btn-primary">
-                            <a href="/tasks">ADD</a>
-                        </button>
+                        <div class="tasks">
+                            <div class="addTask">
+                                <a href="/tasks">
+                                    <div class="add">
+                                        +
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
