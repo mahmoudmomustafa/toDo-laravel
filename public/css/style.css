@@ -11,8 +11,8 @@
     border: 1px solid #8484847a;
     border-radius: 5px;
     background: #aaaaaa82;
-    width: 15%;
-    height: 127.594px;
+    width: 125px;
+    height: 125px;
     text-align: center;
 }
 
@@ -27,7 +27,7 @@
 
 .addTask .add {
     font-size: 50px;
-    padding: 23px
+    padding: 22px
 }
 
 /* index style */
