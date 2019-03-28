@@ -17,8 +17,15 @@
             </div>
             <div class="edit">
               <a href="/tasks/{{$task->id}}/edit">
-                <button class="btn btn-danger">edit</button>
+                <button class="btn btn-success">edit</button>
               </a>
+            </div>
+            <div class="delete">
+            <form action="/tasks/{{$task->id}}" method="POST">
+              @method('DELETE')
+              @csrf
+              <button class="btn btn-danger">Delete</button>
+            </form>
             </div>
           </div>
         </div>
