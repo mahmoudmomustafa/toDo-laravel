@@ -4,7 +4,8 @@
 
 /* home style */
 .tasks {
-    display: flex
+    display: flex;
+    flex-wrap: wrap
 }
 
 .addTask {
@@ -14,6 +15,7 @@
     width: 125px;
     height: 125px;
     text-align: center;
+    margin: 5px;
 }
 
 .addTask:hover {
@@ -26,8 +28,10 @@
 }
 
 .addTask .add {
-    font-size: 50px;
-    padding: 22px
+    /* font-size: 50px;
+    padding: 22px */
+    position: relative;
+    top: 50px;
 }
 
 /* index style */
@@ -43,7 +47,27 @@
 .content .show-task {
     flex-grow: 2;
 }
-
+/* show style */
+.card-body .task{
+    background: #f7f7f7;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 15px;
+    margin: 5px;
+}
+.card-body .task p{
+    margin-left: 70px
+}
+.card-body .change{
+    display: flex;
+}
+.card-body .change div{
+    margin: 15px;
+    width: 50%
+}
+.card-body .change div button{
+    width: 100%;
+}
 /* ///asdasdasda */
 .list {
     text-align: center;

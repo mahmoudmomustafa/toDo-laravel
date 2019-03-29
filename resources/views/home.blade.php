@@ -17,6 +17,19 @@
                                     </div>
                                 </a>
                             </div>
+                            {{-- @if(isset($tasks)) --}}
+                            @foreach ($tasks as $task)
+                            <div class="addTask">
+                            <a href="/tasks/{{$task->id}}">
+                                        <div class="add">
+                                           <p>
+                                               {{$task->task_title}}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+                            {{-- @endif --}}
                         </div>
                     </div>
                 </div>
