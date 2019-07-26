@@ -4,6 +4,7 @@
 /* navbar */
 .navbar{
     padding: 0;
+    font-family: 'Acme', sans-serif;
 }
 .navbar .navbar-brand,.fas.fa-power-off,.lni-user{
     font-size: 30px;
@@ -13,7 +14,24 @@
 .navbar .navbar-brand:hover,.fas.fa-power-off:hover,.lni-user:hover,a.dropdown-item:hover{
     color: #5E52F6;
 }
-
+.navbar .navbar-brand .brand{
+    transform: translate(-5px);
+    font-size: 20px;
+    font-family: 'Pacifico', cursive;
+}
+.navbar .navbar-brand:hover .brand{
+    animation: tog 500ms ease-in-out forwards;
+}
+@keyframes tog{
+    0%{
+        opacity: 0;
+        transform: translate(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-5px)
+    }
+}
 .navbar li.nav-item{
     font-weight: 900;
     border-radius: 3px;
