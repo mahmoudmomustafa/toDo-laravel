@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Acme', sans-serif;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    background-attachment: fixed;
+}
+
 /* navbar */
 .navbar {
     padding: 0;
@@ -60,7 +66,7 @@ a.dropdown-item:hover {
 
 /* home style */
 .tasks {
-    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -70,37 +76,50 @@ a.dropdown-item:hover {
     margin: 5px 10px;
     padding: 10px;
     transition: all 500ms ease-in-out;
-    height: min-content;
+    min-height: fit-content;
+    width: auto;
 }
-.addTask i{
+
+.addTask i {
     cursor: pointer;
 }
-.incompleted{
+
+.addTask:hover {
+    box-shadow: 0 0 8px #757474c2
+}
+
+.incompleted {
     background: linear-gradient(65deg, rgb(246, 82, 82) 0, rgb(249, 130, 130) 100%) !important;
 }
-.completed i:hover{
-    color: rgb(246, 82, 82);
-}
-.completed{
+
+.completed {
     background: linear-gradient(65deg, rgb(82, 246, 166) 0, rgb(153, 249, 130) 100%) !important;
 }
-.incompleted i:hover{
-    color: white;;
-}
-.addTask:hover {
-    background: linear-gradient(65deg, #5E52F6 0, #8B82F9 100%);
+
+.incompleted i:hover,
+.completed i:hover {
     color: white;
 }
-.addTask:hover a{
-    color: rgba(0,0,0,.5) !important;
+
+.btn {
+    background: linear-gradient(65deg, #5E52F6 0, #8B82F9 100%);
+    border-color: #5E52F6;
+    box-shadow: #5E52F6
 }
+
+.addTask:hover a {
+    color: rgba(0, 0, 0, .5) !important;
+}
+
 .addTask a {
     text-decoration: none;
-    color: rgba(0,0,0,.5)
+    color: rgba(0, 0, 0, .5)
 }
-.addTask a p{
+
+.addTask a p {
     margin: 0
 }
+
 .addTask .add {
     position: relative;
     top: 50px;
@@ -119,14 +138,17 @@ a.dropdown-item:hover {
 .content .show-task {
     flex-grow: 2;
 }
-.card{
+
+.card {
     padding: 5px;
     box-shadow: 0 0 8px 0px #aeaeae7a;
     border: 0;
 }
-.card h4 span{
+
+.card h4 span {
     font-size: 15px
 }
+
 /* show style */
 .card-body .task {
     background: #f7f7f7;
@@ -142,27 +164,65 @@ a.dropdown-item:hover {
 
 .card-body .change {
     display: flex;
+    justify-content: flex-end;
 }
 
 .card-body .change div {
     margin: 15px;
-    width: 50%
 }
 
 .card-body .change div button {
     width: 100%;
 }
 
-/* ///asdasdasda */
-.list {
-    text-align: center;
-    background: #f7f7f7;
-    border: 1px solid rgba(128, 128, 128, 0.466);
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
+input,
+textarea {
+    border: 0 !important;
+    box-shadow: 0 0 4px #848484 !important;
+    background: #6357f73b !important;
 }
 
-.list:hover {
-    background: rgb(168, 168, 168);
+/* /sadas */
+.form-check2 {
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px #93939363;
+    background-color: #d7d7d78f;
+}
+
+.form-check2 input {
+    display: none;
+}
+
+.form-check2 label {
+    margin-bottom: 0;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-check2 label i {
+    color: #6a6a6a;
+    padding: 8px;
+    transition: 500ms linear;
+}
+
+.form-check2 input:checked+label {
+    background: linear-gradient(65deg, rgb(82, 246, 166) 0, rgb(153, 249, 130) 100%) !important;
+    /* border-radius: 50px; */
+}
+
+.form-check2 input:checked+label i,
+.form-check2 input:checked+label span {
+    color: #fff;
+}
+
+@keyframes clip {
+    0% {
+        clip-path: circle(11.74% at 28% 50%);
+    }
+
+    100% {
+        clip-path: circle(90.74% at 28% 50%);
+        background: #31d84d;
+    }
 }

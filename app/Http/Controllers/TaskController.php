@@ -27,8 +27,8 @@ class TaskController extends Controller
     public function store()
     {
         $attr = request()->validate([
-            "task_title" => ['required', 'min:3'],
-            "description" => ['required', 'min:5']
+            "task_title" => ['required','string', 'min:3'],
+            "description" => ['required', 'string','min:5']
         ]);
         $attr['user_id'] = auth()->id();
         Task::create($attr);

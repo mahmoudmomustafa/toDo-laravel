@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<div class="col-lg-8">
-    <div class="card">
+<div class="col-lg-6 mx-4">
+    <div class="card mt-2">
         <div class="card-header">
             <h4 class="font-weight-bold" style="color: #5E52F6">{{ __('Tasks asdasda ada sasda ') }}</h4>
         </div>

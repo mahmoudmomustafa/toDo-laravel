@@ -100,7 +100,7 @@
                                         class="text-muted pl-1"><small>({{$incompletedTasks->count()}})</small></span>
                                 </h4>
                                 @if (!$incompletedTasks->count())
-                                <p class="font-weight-bold text-center" style="color: #5b6f82;text-align:center">No
+                                <p class="font-weight-bold text-center" style="color: #5b6f82;">No
                                     InCompleted
                                     Tasks</p>
                                 @else
