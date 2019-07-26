@@ -1,6 +1,31 @@
 * {
     box-sizing: border-box;
 }
+/* navbar */
+.navbar{
+    padding: 0;
+}
+.navbar .navbar-brand,.fas.fa-power-off,.lni-user{
+    font-size: 30px;
+    color: #5b6f82;
+    transition: 500ms ease-in-out
+}
+.navbar .navbar-brand:hover,.fas.fa-power-off:hover,.lni-user:hover,a.dropdown-item:hover{
+    color: #5E52F6;
+}
+
+.navbar li.nav-item{
+    font-weight: 900;
+    border-radius: 3px;
+    margin:4px 5px;
+    transition: all 500ms ease-out;
+}
+
+.navbar li.nav-item:hover{
+    color: white;
+    box-shadow: 0 8px 16px rgba(94,82,246,.25);
+    background: linear-gradient(65deg,#5E52F6 0,#8B82F9 100%);
+}
 
 /* home style */
 .tasks {
@@ -47,27 +72,33 @@
 .content .show-task {
     flex-grow: 2;
 }
+
 /* show style */
-.card-body .task{
+.card-body .task {
     background: #f7f7f7;
     border-radius: 5px;
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, .125);
     padding: 15px;
     margin: 5px;
 }
-.card-body .task p{
+
+.card-body .task p {
     margin-left: 70px
 }
-.card-body .change{
+
+.card-body .change {
     display: flex;
 }
-.card-body .change div{
+
+.card-body .change div {
     margin: 15px;
     width: 50%
 }
-.card-body .change div button{
+
+.card-body .change div button {
     width: 100%;
 }
+
 /* ///asdasdasda */
 .list {
     text-align: center;

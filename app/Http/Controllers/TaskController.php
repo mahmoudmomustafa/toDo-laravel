@@ -18,7 +18,8 @@ class TaskController extends Controller
 
         return view('tasks.index', compact("tasks"));
     }
-    public function show(Task $task){
+    public function show(Task $task)
+    {
         // $this->authorize('view', $task);
         return view('tasks.show', compact("task"));
     }
@@ -36,12 +37,17 @@ class TaskController extends Controller
     {
         return view('tasks.edit', compact('task'));
     }
-    public function update(Task $task){
-
-        $task->update(request(["task_title","description"]));
-        return redirect('/tasks');
+    public function update(Task $task)
+    {
+        $task->update([
+            'done' => request()->has('done')
+        ]);
+        return back();
+        $task->update(request(["task_title", "description"]));
+        return view('tasks.show');
     }
-    public function destroy(Task $task){
+    public function destroy(Task $task)
+    {
         $task->delete();
         return redirect('/tasks');
     }

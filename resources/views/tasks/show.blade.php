@@ -6,17 +6,24 @@
     <div class="row justify-content-center m-2 show-task">
       <div class="col-md-12">
         <div class="card">
-          <div class="card-header">Your Tasks</div>
-
-          <div class="card-body">
-            <div class="task title">
-              <h3>Title :</h3>
-              <p>
-                {{$task->task_title}}
-              </p>
+          <div class="card-header">
+            <h3 class="m-0">
+              {{$task->task_title}}
+            </h3>
+            <div class="check">
+              <form method="POST" action="/tasks/{{$task->id}}">
+                @method('PATCH') @csrf
+                <label for="done">
+                     <input type="checkbox" name="done" onchange="this.form.submit()" {{$task->done ? 'checked' : ''}}>
+                     Done
+                  </label>
+              </form>
             </div>
+            </form>
+          </div>
+          <div class="card-body">
             <div class="task descriton">
-              <h3>Description :</h3>
+              <h4>Description</h4>
               <p>
                 {{$task->description}}
               </p>
