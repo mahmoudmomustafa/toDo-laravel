@@ -1,75 +1,94 @@
 * {
     box-sizing: border-box;
 }
+
 /* navbar */
-.navbar{
+.navbar {
     padding: 0;
     font-family: 'Acme', sans-serif;
 }
-.navbar .navbar-brand,.fas.fa-power-off,.lni-user{
+
+.navbar .navbar-brand,
+.fas.fa-power-off,
+.lni-user {
     font-size: 30px;
     color: #5b6f82;
     transition: 500ms ease-in-out
 }
-.navbar .navbar-brand:hover,.fas.fa-power-off:hover,.lni-user:hover,a.dropdown-item:hover{
+
+.navbar .navbar-brand:hover,
+.fas.fa-power-off:hover,
+.lni-user:hover,
+a.dropdown-item:hover {
     color: #5E52F6;
 }
-.navbar .navbar-brand .brand{
+
+.navbar .navbar-brand .brand {
     transform: translate(-5px);
     font-size: 20px;
     font-family: 'Pacifico', cursive;
 }
-.navbar .navbar-brand:hover .brand{
+
+.navbar .navbar-brand:hover .brand {
     animation: tog 500ms ease-in-out forwards;
 }
-@keyframes tog{
-    0%{
+
+@keyframes tog {
+    0% {
         opacity: 0;
         transform: translate(-10px);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translate(-5px)
     }
 }
-.navbar li.nav-item{
+
+.navbar li.nav-item {
     font-weight: 900;
     border-radius: 3px;
-    margin:4px 5px;
+    margin: 4px 5px;
     transition: all 500ms ease-out;
 }
 
-.navbar li.nav-item:hover{
+.navbar li.nav-item:hover {
     color: white;
-    box-shadow: 0 8px 16px rgba(94,82,246,.25);
-    background: linear-gradient(65deg,#5E52F6 0,#8B82F9 100%);
+    box-shadow: 0 8px 16px rgba(94, 82, 246, .25);
+    background: linear-gradient(65deg, #5E52F6 0, #8B82F9 100%);
 }
 
 /* home style */
 .tasks {
     display: flex;
-    flex-wrap: wrap
+    justify-content: center;
 }
 
 .addTask {
-    border: 1px solid #8484847a;
-    border-radius: 5px;
-    background: #aaaaaa82;
-    width: 125px;
-    height: 125px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #a3a3a394;
+    width: 100%;
     text-align: center;
-    margin: 5px;
+    margin: 5px 10px;
+    padding: 10px;
+    background: linear-gradient(65deg, #5E52F6 0, #8B82F9 100%);
+    transition: all 500ms ease-in-out;
 }
 
 .addTask:hover {
-    background: #0101014d
+    background: linear-gradient(65deg, rgb(246, 82, 82) 0, rgb(249, 130, 130) 100%);
+    color: white;
 }
-
+.addTask:hover a{
+    color: rgba(0,0,0,.5) !important;
+}
 .addTask a {
     text-decoration: none;
-    color: #3c3c41
+    color: rgba(0,0,0,.5)
 }
-
+.addTask a p{
+    margin: 0
+}
 .addTask .add {
     /* font-size: 50px;
     padding: 22px */
@@ -90,7 +109,14 @@
 .content .show-task {
     flex-grow: 2;
 }
-
+.card{
+    padding: 5px;
+    box-shadow: 0 0 8px 0px #aeaeae7a;
+    border: 0;
+}
+.card h4 span{
+    font-size: 15px
+}
 /* show style */
 .card-body .task {
     background: #f7f7f7;
