@@ -19,3 +19,4 @@ Route::resource('/tasks', 'TaskController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home/{task}', 'HomeController@destroy');

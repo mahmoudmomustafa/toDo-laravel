@@ -14,14 +14,15 @@ class TaskController extends Controller
     public function index()
     {
         auth();
-        $tasks = Task::where('user_id', auth()->id())->get();
-
-        return view('tasks.index', compact("tasks"));
+        $incompletedTasks = Task::where(['done' => false, 'user_id' => auth()->id()])->get();
+        $completedTasks = Task::where(['done' => true, 'user_id' => auth()->id()])->get();
+        return view('tasks.index', compact('incompletedTasks', 'completedTasks'));
     }
     public function show(Task $task)
     {
-        // $this->authorize('view', $task);
-        return view('tasks.show', compact("task"));
+        $incompletedTasks = Task::where(['done' => false, 'user_id' => auth()->id()])->get();
+        $completedTasks = Task::where(['done' => true, 'user_id' => auth()->id()])->get();
+        return view('tasks.show', compact("task", 'incompletedTasks', 'completedTasks'));
     }
     public function store()
     {
@@ -35,7 +36,9 @@ class TaskController extends Controller
     }
     public function edit(Task $task)
     {
-        return view('tasks.edit', compact('task'));
+        $incompletedTasks = Task::where(['done' => false, 'user_id' => auth()->id()])->get();
+        $completedTasks = Task::where(['done' => true, 'user_id' => auth()->id()])->get();
+        return view('tasks.edit', compact('task', 'incompletedTasks', 'completedTasks'));
     }
     public function update(Task $task)
     {

@@ -87,7 +87,84 @@
             </div>
         </nav>
         <main class="py-4">
-            @yield('content')
+            <div class="container-fluid">
+                <div class="content">
+                    <div class="row justify-content-center show-task">
+                        @yield('content')
+                        {{-- sidebar --}}
+                        <div class="col-lg-3">
+                            {{-- incomplete --}}
+                            <div class="card mt-2">
+                                <h4 class="p-4 font-weight-bold" style="color: #5E52F6">
+                                    {{ __('Incomplete Tasks') }}<span
+                                        class="text-muted pl-1"><small>({{$incompletedTasks->count()}})</small></span>
+                                </h4>
+                                @if (!$incompletedTasks->count())
+                                <p class="font-weight-bold text-center" style="color: #5b6f82;text-align:center">No
+                                    InCompleted
+                                    Tasks</p>
+                                @else
+                                <div class="card-body pt-1">
+                                    <div class="tasks row">
+                                        @foreach ($incompletedTasks as $incompletedTask)
+                                        <div class="col addTask incompleted">
+                                            <a class="float-left font-weight-bold"
+                                                href="/tasks/{{$incompletedTask->id}}">
+                                                <p>
+                                                    {{$incompletedTask->task_title}}
+                                                </p>
+                                            </a>
+                                            <a class="float-right" href="/tasks/{{$incompletedTask->id}}">
+                                                <i class="lni-chevron-right"></i>
+                                            </a>
+                                            {{-- <form id="delete-inform" action="/home/{{$incompletedTask->id}}"
+                                            method="get"
+                                            style="display: none;">
+                                            @method('DELETE')
+                                            @csrf
+                                            </form> --}}
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                @endif
+                            </div>
+                            {{-- complete --}}
+                            <div class="card mt-2">
+                                <h4 class="p-4 font-weight-bold" style="color: #5E52F6">{{ __('Completed Tasks') }}<span
+                                        class="text-muted pl-1"><small>({{$completedTasks->count()}})</small></span>
+                                </h4>
+                                @if (!$completedTasks->count())
+                                <p class="font-weight-bold text-center" style="color: #5b6f82;">No Completed Tasks</p>
+                                @else
+                                <div class="card-body pt-1">
+                                    <div class="tasks row">
+                                        @foreach ($completedTasks as $completedTask)
+                                        <div class="col addTask completed">
+                                            <a class="float-left font-weight-bold" href="/tasks/{{$completedTask->id}}">
+                                                <p>
+                                                    {{$completedTask->task_title}}
+                                                </p>
+                                            </a>
+                                            <a class="float-right" href="/tasks/{{$completedTask->id}}"><i
+                                                    class="lni-chevron-right"></i>
+                                            </a>
+                                            {{-- <form id="delete-form" action="/home/{{$completedTask->id}}/edit"
+                                            method="get"
+                                            style="display: none;">
+                                            @method('PATCH')
+                                            @csrf
+                                            </form> --}}
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>

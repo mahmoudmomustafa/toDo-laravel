@@ -67,16 +67,28 @@ a.dropdown-item:hover {
 .addTask {
     border-radius: 4px;
     box-shadow: 0 0 5px #a3a3a394;
-    width: 100%;
-    text-align: center;
     margin: 5px 10px;
     padding: 10px;
-    background: linear-gradient(65deg, #5E52F6 0, #8B82F9 100%);
     transition: all 500ms ease-in-out;
+    height: min-content;
 }
-
+.addTask i{
+    cursor: pointer;
+}
+.incompleted{
+    background: linear-gradient(65deg, rgb(246, 82, 82) 0, rgb(249, 130, 130) 100%) !important;
+}
+.completed i:hover{
+    color: rgb(246, 82, 82);
+}
+.completed{
+    background: linear-gradient(65deg, rgb(82, 246, 166) 0, rgb(153, 249, 130) 100%) !important;
+}
+.incompleted i:hover{
+    color: white;;
+}
 .addTask:hover {
-    background: linear-gradient(65deg, rgb(246, 82, 82) 0, rgb(249, 130, 130) 100%);
+    background: linear-gradient(65deg, #5E52F6 0, #8B82F9 100%);
     color: white;
 }
 .addTask:hover a{
@@ -90,8 +102,6 @@ a.dropdown-item:hover {
     margin: 0
 }
 .addTask .add {
-    /* font-size: 50px;
-    padding: 22px */
     position: relative;
     top: 50px;
 }

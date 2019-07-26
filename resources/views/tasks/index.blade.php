@@ -1,6 +1,6 @@
 @extends('layouts.app') 
 @section('content')
-<div class="container">
+<div class="col-lg-8">
   <div class="content">
     {{-- add tasks --}}
     <div class="row justify-content-center m-2 add-task">
@@ -21,24 +21,6 @@
                 <button style="width:100%" type="submit" class="btn btn-primary">Add</button>
               </div>
             </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    {{-- show tasks --}}
-    <div class="row justify-content-center m-2 show-task">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header">Your Tasks</div>
-
-          <div class="card-body">
-            @foreach ($tasks as $task)
-            <a href="/tasks/{{$task->id}}">
-              <div class="list">
-                {{$task->task_title}}
-              </div>
-            </a>
-            @endforeach
           </div>
         </div>
       </div>

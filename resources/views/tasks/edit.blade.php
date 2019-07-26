@@ -1,6 +1,6 @@
 @extends('layouts.app') 
 @section('content')
-<div class="container">
+<div class="col-lg-8">
   <div class="content">
     {{-- add tasks --}}
     <div class="row justify-content-center m-2 add-task">

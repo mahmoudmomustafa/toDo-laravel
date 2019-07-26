@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
+
 class HomeController extends Controller
 {
     /**
@@ -23,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $tasks = Task::where('user_id', auth()->id())->get();
-
-        return view('home',compact('tasks'));
+        $incompletedTasks = Task::where(['done' => false, 'user_id' => auth()->id()])->get();
+        $completedTasks = Task::where(['done' => true, 'user_id' => auth()->id()])->get();
+        return view('home', compact('incompletedTasks', 'completedTasks'));
     }
 }
