@@ -6,7 +6,7 @@
     <h4 class="p-4 font-weight-bold" style="color: #5E52F6">{{ $task->task_title }}</h4>
     <div class="card-body">
       <div class="task descriton">
-        <h4>Description</h4>
+        <h4 class="p-4 font-weight-bold" style="color: #5E52F6">Description</h4>
         <p>
           {{$task->description}}
         </p>

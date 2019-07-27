@@ -1,34 +1,15 @@
 @extends('layouts.app')
 @section('content')
 <div class="col-lg-6 mx-4">
-    <div class="card mt-2">
-        <div class="card-header">
-            <h4 class="font-weight-bold" style="color: #5E52F6">{{ __('Tasks asdasda ada sasda ') }}</h4>
-        </div>
-
-        <div class="card-body">
-            <div class="tasks">
-                <div class="addTask">
-                    <a href="/tasks">
-                        <div class="add">
-                            +
-                        </div>
-                    </a>
-                </div>
-                {{-- @if(isset($tasks)) --}}
-                {{-- @foreach ($tasks as $task) --}}
-                <div class="addTask">
-                    {{-- <a href="/tasks/{{$task->id}}"> --}}
-                    <div class="add">
-                        <p>
-                            {{-- {{$task->task_title}} --}}
-                        </p>
-                    </div>
-                    </a>
-                </div>
-                {{-- @endforeach --}}
-                {{-- @endif --}}
-            </div>
+    <div class=" mt-2">
+        <h2 class="show p-4 font-weight-bold" style="color: #5b6f82">{{ __('Welcome Back ') }}
+            <span>'{{ Auth::user()->name}}'</span></h2>
+        <div class="card-body home">
+            <h3 class="p-4 font-weight-bold float-left" style="color: #5E52F6">Make Your Lists Now</h3>
+            <a href="/tasks">
+                <button class="btn btn-success">Add New Task</button>
+              </a>
+            <img class="float-right" src="/img/list.svg" height="280">
         </div>
     </div>
 </div>

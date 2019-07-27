@@ -12,6 +12,7 @@
 
 
     <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
@@ -107,22 +108,18 @@
                                 <div class="card-body pt-1">
                                     <div class="tasks row">
                                         @foreach ($incompletedTasks as $incompletedTask)
-                                        <div class="col addTask incompleted">
-                                            <a class="float-left font-weight-bold"
-                                                href="/tasks/{{$incompletedTask->id}}">
-                                                <p>
-                                                    {{$incompletedTask->task_title}}
-                                                </p>
-                                            </a>
-                                            <a class="float-right" href="/tasks/{{$incompletedTask->id}}">
-                                                <i class="lni-chevron-right"></i>
-                                            </a>
-                                            {{-- <form id="delete-inform" action="/home/{{$incompletedTask->id}}"
-                                            method="get"
-                                            style="display: none;">
-                                            @method('DELETE')
-                                            @csrf
-                                            </form> --}}
+                                        <div class="row addTask incompleted">
+                                            <div class="col">
+                                                <a class="float-left font-weight-bold"
+                                                    href="/tasks/{{$incompletedTask->id}}">
+                                                    <p>
+                                                        {{$incompletedTask->task_title}}
+                                                    </p>
+                                                </a>
+                                                <a class="float-right" href="/tasks/{{$incompletedTask->id}}">
+                                                    <i class="lni-chevron-right"></i>
+                                                </a>
+                                            </div>
                                         </div>
                                         @endforeach
                                     </div>
@@ -140,21 +137,17 @@
                                 <div class="card-body pt-1">
                                     <div class="tasks row">
                                         @foreach ($completedTasks as $completedTask)
-                                        <div class="col addTask completed">
-                                            <a class="float-left font-weight-bold" href="/tasks/{{$completedTask->id}}">
-                                                <p>
-                                                    {{$completedTask->task_title}}
-                                                </p>
-                                            </a>
-                                            <a class="float-right" href="/tasks/{{$completedTask->id}}"><i
-                                                    class="lni-chevron-right"></i>
-                                            </a>
-                                            {{-- <form id="delete-form" action="/home/{{$completedTask->id}}/edit"
-                                            method="get"
-                                            style="display: none;">
-                                            @method('PATCH')
-                                            @csrf
-                                            </form> --}}
+                                        <div class="row addTask completed">
+                                            <div class="col">
+                                                <a class="float-left font-weight-bold"
+                                                    href="/tasks/{{$completedTask->id}}">
+                                                    <p>
+                                                        {{$completedTask->task_title}}
+                                                    </p>
+                                                </a>
+                                                <a class="float-right" href="/tasks/{{$completedTask->id}}"><i class="lni-chevron-right"></i>
+                                                </a>
+                                            </div>
                                         </div>
                                         @endforeach
                                     </div>
