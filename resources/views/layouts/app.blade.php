@@ -145,7 +145,8 @@
                                                         {{$completedTask->task_title}}
                                                     </p>
                                                 </a>
-                                                <a class="float-right" href="/tasks/{{$completedTask->id}}"><i class="lni-chevron-right"></i>
+                                                <a class="float-right" href="/tasks/{{$completedTask->id}}"><i
+                                                        class="lni-chevron-right"></i>
                                                 </a>
                                             </div>
                                         </div>
