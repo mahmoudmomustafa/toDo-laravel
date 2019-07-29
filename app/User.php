@@ -39,4 +39,11 @@ class User extends Authenticatable
     public function tasks(){
         return $this->hasMany(Task::class,'user_id');
     }
+    // get first name
+    public function firstName(){
+        $splitName = explode(' ', $this->name);
+
+        $firstName = $splitName[0];
+        return $firstName;
+    }
 }

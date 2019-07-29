@@ -110,9 +110,11 @@ a.dropdown-item:hover {
     box-shadow: 0 0 15px rgba(93, 82, 246, 0.548);
     color: white;
 }
-.btn:hover,.btn:focus{
-    box-shadow:0 0 5px #5E52F6;
-    border: none ;
+
+.btn:hover,
+.btn:focus {
+    box-shadow: 0 0 5px #5E52F6;
+    border: none;
 }
 
 .addTask:hover a {
@@ -140,7 +142,8 @@ a.dropdown-item:hover {
     min-height: 150px;
 }
 
-.log-card,.reg-card {
+.log-card,
+.reg-card {
     padding: 50px;
     box-shadow: inset 0 0 8px 0px #aeaeae7a;
     height: 100%;
@@ -181,8 +184,12 @@ textarea {
     border: 0 !important;
     box-shadow: 0 0 4px #848484 !important;
     background: #6357f73b !important;
+    transition: 500ms ease;
 }
-
+input:hover,
+textarea:hover{
+    transform: scale(1.01);
+}
 /* /sadas */
 .form-check2 {
     border-radius: 8px;
@@ -231,7 +238,7 @@ textarea {
     background: linear-gradient(65deg, #FF4D79 0, #FF809F 100%);
     box-shadow: 0 8px 16px rgba(255, 77, 121, .25);
     color: #fff !important;
-    border: 0
+    border: 0;
 }
 
 .btn-success {
@@ -242,7 +249,8 @@ textarea {
 }
 
 .shows {
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster Two', cursive;
+    text-shadow: 0 0 10px gray;
 }
 
 .home {
@@ -254,9 +262,9 @@ textarea {
 .home h3 {
     position: absolute;
     top: -30px;
-    left: 15px;
+    left: 0;
     word-spacing: 20px;
-    width: 55%;
+    width: 48%;
     font-size: 50px;
     text-indent: 35px;
     color: rgb(108, 99, 255);
@@ -264,8 +272,9 @@ textarea {
 }
 
 .home .btn {
-    width: 35%;
+    width: 40%;
     position: absolute;
+    height: 45px;
     left: 50px;
     top: 80%;
 }
@@ -276,11 +285,12 @@ textarea {
 
 .log-img {
     position: relative;
+    height: 91.1vh;
 }
 
 .log-img img {
     width: 100%;
-    min-height: 567px
+    height: 100%
 }
 
 .heading {
@@ -296,7 +306,6 @@ textarea {
 
 .heading h2 {
     text-shadow: 0 0 10px #5b6f82;
-    margin-top: 2rem;
     line-height: 75px;
     word-spacing: 145px;
     font-size: 55px;
